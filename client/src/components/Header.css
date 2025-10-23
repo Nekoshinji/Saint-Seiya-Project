@@ -1,0 +1,20 @@
+.header-content img {
+  margin: auto;
+  width: 15em;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .header-content img {
+    width: 25em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header-content img {
+    width: 35em;
+  }
+}

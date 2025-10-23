@@ -1,0 +1,267 @@
+.icon-listing {
+  width: 9em;
+  background: transparent;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: drop-shadow(0 0 10px white);
+}
+
+.new-button {
+  width: 11em;
+  border: solid 3px rgba(96, 96, 96, 1);
+  box-shadow: 8px 8px 4px rgba(120, 120, 120, 0.3);
+  border-radius: 10px;
+  margin-top: 65px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.new-button:hover {
+  transform: scale(1.1);
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  position: relative;
+  width: 100%;
+  height: 990px;
+  flex-direction: column;
+  padding-top: 65px;
+  margin-top: 10px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 730px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: absolute;
+  width: 238px;
+  height: 480px;
+  background-color: rgba(20, 20, 20, 1);
+  box-shadow: 8px 8px 4px rgba(120, 120, 120, 0.3);
+  border: solid 3px rgba(96, 96, 96, 1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s, opacity 0.5s, box-shadow 0.3s ease-in-out;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 120px;
+}
+
+.img-cloth {
+  width: 10em;
+  background: transparent;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(0, 150, 255, 0.7));
+  animation: float 3s infinite ease-in-out, aura-move 4s infinite alternate
+    ease-in-out;
+}
+
+.img-knight {
+  width: 10em;
+  background: transparent;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(0, 150, 255, 0.7));
+  animation: aura-move 4s infinite alternate ease-in-out;
+}
+
+.img-cloth:hover {
+  animation:
+    cosmo 1.5s infinite alternate ease-in-out,
+    float 3s infinite ease-in-out,
+    aura-move 4s infinite alternate ease-in-out;
+  filter: drop-shadow(0 0 20px rgba(0, 150, 255, 1))
+    drop-shadow(0 0 40px rgba(0, 50, 255, 0.8));
+}
+
+/* Effet de mouvement */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Effet de pulsation */
+@keyframes cosmo {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(0, 150, 255, 0.7));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 30px rgba(0, 150, 255, 1));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 15px rgba(0, 150, 255, 0.7));
+  }
+}
+
+/* Effet de mouvement de l'aura */
+@keyframes aura-move {
+  0% {
+    filter: drop-shadow(0 0 15px rgba(0, 150, 255, 0.8))
+      drop-shadow(0 0 30px rgba(0, 100, 255, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(0, 150, 255, 1))
+      drop-shadow(0 0 50px rgba(0, 50, 255, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 15px rgba(0, 150, 255, 0.8))
+      drop-shadow(0 0 30px rgba(0, 100, 255, 0.6));
+  }
+}
+
+/* Ajout de particules autour */
+.card::before img,
+.card::after img {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 150, 255, 0.6) 10%,
+    rgba(0, 150, 255, 0) 80%
+  );
+  border-radius: 50%;
+  opacity: 0;
+  animation: particules 1.5s infinite ease-in-out;
+}
+
+@keyframes particules {
+  0% {
+    transform: scale(0.5) translate(0, 0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1) translate(10px, -10px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.5) translate(0, 0);
+    opacity: 0.3;
+  }
+}
+
+.card h2 {
+  font-size: 20px;
+  background: transparent;
+}
+
+p.info-cloth {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 15px;
+  background: transparent;
+}
+
+p.info-knight {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 12px;
+  background: transparent;
+}
+
+.card.active {
+  transform: translateY(0) scale(1.1);
+  z-index: 10;
+}
+
+.card.left {
+  transform: translateY(-220px) scale(0.8);
+  opacity: 0.5;
+  z-index: 5;
+}
+
+.card.right {
+  transform: translateY(220px) scale(0.8);
+  opacity: 0.5;
+  z-index: 5;
+}
+
+.card.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .icon-listing {
+    width: 11em;
+  }
+
+  .new-button {
+    width: 15em;
+    margin-bottom: 35px;
+  }
+
+  .icon-listing {
+    width: 15em;
+  }
+
+  .carousel-container {
+    height: 640px;
+    top: 60px;
+
+    margin-top: 40px;
+  }
+
+  .carousel {
+    width: 800px;
+    height: 78%;
+  }
+
+  .card {
+    width: 295px;
+    height: 461px;
+    margin-bottom: 20px;
+  }
+
+  .img-cloth {
+    width: 15em;
+  }
+
+  .info-cloth {
+    font-size: 11px;
+  }
+
+  .card.active {
+    transform: translateX(0) scale(1.1);
+    z-index: 10;
+  }
+
+  .card.left {
+    transform: translateX(-250px) scale(0.8);
+    opacity: 0.5;
+    z-index: 5;
+  }
+
+  .card.right {
+    transform: translateX(250px) scale(0.8);
+    opacity: 0.5;
+    z-index: 5;
+  }
+
+  .card.behind {
+    transform: translateZ(-300px) scale(0.7);
+    opacity: 0.3;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,94 @@
+nav.icon-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.article {
+  border: solid 3px rgba(96, 96, 96, 1);
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  background-color: rgba(20, 20, 20, 1);
+  box-shadow: 8px 8px 4px rgba(120, 120, 120, 0.3);
+}
+
+.article p {
+  padding-bottom: 15px;
+  font-size: 12px;
+  background: transparent;
+}
+
+.article h1 {
+  padding-bottom: 15px;
+  font-size: 20px;
+  background: transparent;
+}
+
+.sanctuaire,
+.asgard,
+.poseidon,
+.chibi-athena {
+  width: 12em;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  background: transparent;
+}
+
+.sanctuaire:hover,
+.chibi-athena:hover {
+  filter: drop-shadow(0 0 15px #fff900);
+}
+
+.asgard:hover {
+  filter: drop-shadow(0 0 15px #ffffff);
+}
+
+.poseidon:hover {
+  filter: drop-shadow(0 0 15px #00fbff);
+}
+
+.chibi-athena {
+  width: 12em;
+}
+
+@media screen and (min-width: 768px) {
+  nav.icon-nav {
+    flex-direction: row;
+  }
+  .asgard {
+    padding-bottom: 11px;
+  }
+  .poseidon {
+    padding-top: 4px;
+  }
+  .article {
+    margin-left: 160px;
+    margin-right: 160px;
+  }
+  .article p {
+    font-size: 18px;
+  }
+  .article h1 {
+    font-size: 25px;
+  }
+  .chibi-athena {
+    width: 20em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .article {
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+  .sanctuaire,
+  .asgard,
+  .poseidon {
+    width: 18em;
+  }
+}
