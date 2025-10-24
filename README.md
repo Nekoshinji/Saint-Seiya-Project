@@ -1,4 +1,5 @@
 Installation :
+
 1 .Clonez ce répertoire sur votre machine locale : git clone https://github.com/VotreNom/nom-du-projet.git
 
 2 .Installez les dépendances nécessaires : npm install
